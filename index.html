@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.E RENOVATION - Maçonnerie et Électricité à Noyon (60400)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.postimg.cc/gksv65nG/Creer-une-entreprise-de-batiment-travaux-publics.png');
+            background-size: 120%;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .hero > div {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .active-tab {
+            border-bottom: 3px solid #fdce27;
+            color: #fdce27;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/mrLnDB9R/Chat-GPT-Image-22-juil-2025-18-24-17.png" alt="A.E RENOVATION Logo" class="h-28">
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#accueil" class="text-gray-700 hover:text-blue-600 font-medium">Accueil</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a></li>
+                    <li><a href="#realisations" class="text-gray-700 hover:text-blue-600 font-medium">Réalisations</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
+            <ul class="flex flex-col space-y-3">
+                <li><a href="#accueil" class="block text-gray-700 hover:text-blue-600 font-medium">Accueil</a></li>
+                <li><a href="#services" class="block text-gray-700 hover:text-blue-600 font-medium">Services</a></li>
+                <li><a href="#realisations" class="block text-gray-700 hover:text-blue-600 font-medium">Réalisations</a></li>
+                <li><a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero h-96 flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">A.E RENOVATION</h1>
+            <p class="text-xl md:text-2xl mb-6">Maçonnerie & Électricité</p>
+            <a href="#contact" class="bg-[#fdce27] hover:bg-[#f0c21c] text-white font-bold py-3 px-6 rounded-lg inline-block transition duration-300 animate-pulse hover:animate-none">
+                Nous contacter
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+                Nos Services
+            </h2>
+            
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-lg bg-gray-100 p-1">
+                    <button class="tab-btn px-8 py-3 text-lg font-bold text-gray-700 rounded-lg active-tab hover:bg-white hover:text-[#fdce27] transition-all duration-300 shadow-md" data-tab="maconnerie">
+                        <i class="fas fa-hammer mr-2"></i>Maçonnerie
+                    </button>
+                    <button class="tab-btn px-8 py-3 text-lg font-bold text-gray-700 rounded-lg hover:bg-white hover:text-[#fdce27] transition-all duration-300" data-tab="electricite">
+                        <i class="fas fa-bolt mr-2"></i>Électricité
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Maçonnerie Tab -->
+            <div id="maconnerie" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                    <div class="p-8 flex flex-col h-full">
+                        <div class="bg-[#fdce27] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 text-2xl">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Maçonnerie générale</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Construction, rénovation et réparation de structures en brique, pierre ou parpaing pour tous types de bâtiments.</p>
+                        <a href="#contact" class="text-[#fdce27] font-semibold inline-flex items-center hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                    <div class="p-8 flex flex-col h-full">
+                        <div class="bg-[#fdce27] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 text-2xl hover:bg-white hover:text-[#fdce27] transition duration-300">
+                            <i class="fas fa-digging"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Terrassement</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Préparation des terrains, fondations, tranchées et tous travaux de terrassement nécessaires à vos projets.</p>
+                        <a href="#contact" class="text-[#fdce27] font-semibold inline-flex items-center hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                    <div class="p-8 flex flex-col h-full">
+                        <div class="bg-[#fdce27] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 text-2xl">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Rénovation</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Rénovation complète ou partielle de bâtiments, restauration de façades, murs intérieurs et pose de carrelage intérieur/extérieur.</p>
+                        <a href="#contact" class="text-[#fdce27] font-semibold inline-flex items-center hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Électricité Tab (hidden by default) -->
+            <div id="electricite" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Installation électrique</h3>
+                        <p class="text-gray-600">Installation complète ou partielle de réseaux électriques pour constructions neuves ou rénovations.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Mise aux normes</h3>
+                        <p class="text-gray-600">Mise en conformité des installations électriques selon les normes en vigueur pour votre sécurité.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Dépannage</h3>
+                        <p class="text-gray-600">Intervention rapide pour tous problèmes électriques : coupures, pannes, dysfonctionnements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations Section -->
+    <section id="realisations" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos Réalisations</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://i.postimg.cc/sgqBfDqG/1415411867748128711.jpg" alt="Chantier 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Travaux de renforcement de plancher (Poteaux/Poutres)</h3>
+                        <p class="text-gray-600">Noyon - 2025</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://i.postimg.cc/TPx6JzWH/IMG-2891.jpg" alt="Chantier 2" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Pose d'un revêtement extérieur pour la création d'une terrasse</h3>
+                        <p class="text-gray-600">Noyon - 2024</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://i.postimg.cc/c4QZt1v8/506616923-122121163208839598-8838545755497224345-n.jpg" alt="Chantier 3" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Rénovation d'un plancher bois suite à un dégât des eaux</h3>
+                        <p class="text-gray-600">Cuts - 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contactez-nous</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <div class="space-y-6">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4 text-gray-800">Comment nous contacter</h3>
+                            <p class="text-gray-600 mb-4">Pour nous contacter, veuillez utiliser l'un des moyens suivants :</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-phone-alt text-[#fdce27] mt-1 mr-3"></i>
+                                    <span>06 36 15 94 43</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-envelope text-[#fdce27] mt-1 mr-3"></i>
+                                    <span>ae.renovation.structure@gmail.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">Informations de contact</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-building text-[#fdce27] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">A.E RENOVATION</h4>
+                                <p class="text-gray-600">Maçonnerie & Électricité</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#fdce27] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Zone d'intervention</h4>
+                                <p class="text-gray-600">Noyon (60400) et ses alentours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-[#fdce27] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Téléphone</h4>
+                                <p class="text-gray-600">06 36 15 94 43</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-[#fdce27] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">ae.renovation.structure@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-[#fdce27] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Horaires</h4>
+                                <p class="text-gray-600">Lundi - Samedi : 8h - 19h</p>
+                                <p class="text-gray-600">Dimanche : 9h - 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Nous suivre</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61575187963978" class="text-blue-600 hover:text-blue-800 text-2xl" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fa.e_renovation%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExeFdXVVoxTzd0TVRDYW9vagEeg0iJlXQpb5ngB5pBaQyV2HrpnjUVW7Gmr0mj8Yy7NbLg49Xod49O1vuR5UE_aem_sYb6dVhrKzFtuibVWME3mg&h=AT0xyb1vs7YuLXgJ77Tb4U1xP8tKNP3AMcvsbBpLIDaePdmytdXVMUwIHCWY5Y9lRc7y-gn8Mn5GDGMfUIlHnDKcQ5rrsI44Gs8tLHMQNv4RDF25GvOkH-607-QDpceR0IhtabqBuxT-N8lzGVN6KA" class="text-pink-600 hover:text-pink-800 text-2xl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://i.postimg.cc/mrLnDB9R/Chat-GPT-Image-22-juil-2025-18-24-17.png" alt="A.E RENOVATION Logo" class="h-20 mr-2">
+                    </div>
+                    <p class="text-gray-400 mt-1">Maçonnerie & Électricité à Noyon (60400)</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">&copy; 2025 A.E RENOVATION. Tous droits réservés.</p>
+                    <div class="mt-2">
+                        <a href="#" class="text-gray-400 hover:text-white mr-4">Mentions légales</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Politique de confidentialité</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active-tab');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active-tab');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show the selected tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=aerenovation/aerenovation" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
